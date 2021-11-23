@@ -49,11 +49,11 @@ public extension UIView {
     /// - Parameters:
     ///   - position: position from x, y
     ///   - duration: speed run
-    func shake(position: Position = .x, duration: CFTimeInterval = 5.0) {
+    func shake(position: Position = .x, duration: CFTimeInterval = 0.3) {
         let animation = CASpringAnimation(keyPath: "position.\(position.rawValue)")
         animation.damping = 1
         animation.fromValue = position == .y ? self.layer.position.y : self.layer.position.x
-        animation.toValue = position == .y ? self.layer.position.y - 100.0 : self.layer.position.x - 100.0
+        animation.toValue = position == .y ? self.layer.position.y - 5 : self.layer.position.x - 5
         animation.duration = duration
         self.layer.add(animation, forKey: "shake")
     }
