@@ -57,7 +57,7 @@ extension UIView.AlignView {
     }
 }
 
-func mainDelay(durcation: TimeInterval, execute: @escaping ()-> Void) {
+public func mainDelay(durcation: TimeInterval, execute: @escaping ()-> Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + durcation) {
         execute()
     }
