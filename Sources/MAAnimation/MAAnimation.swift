@@ -43,7 +43,7 @@ public extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     
     /// Shake Animation
     /// - Parameters:
