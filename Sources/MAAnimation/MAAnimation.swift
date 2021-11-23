@@ -1,4 +1,5 @@
 import UIKit
+import RXSwift
 
 public extension UIView {
     
@@ -41,6 +42,9 @@ public extension UIView {
             self.center.y += -view.bounds.height - outViewHeight
         }
     }
+    
+    func makeAnimation() {
+    }
 }
 
 public extension UIView {
@@ -56,6 +60,8 @@ public extension UIView {
         animation.toValue = position == .y ? self.layer.position.y - 5 : self.layer.position.x - 5
         animation.duration = duration
         self.layer.add(animation, forKey: "shake")
+        
+        
     }
 }
 
