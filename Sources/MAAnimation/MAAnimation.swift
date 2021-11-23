@@ -44,7 +44,27 @@ public extension UIView {
 }
 
 extension UIView {
+    
+    /// Shake Animation
+    /// - Parameters:
+    ///   - position: position from x, y
+    ///   - duration: speed run
+    func shake(position: Position = .x, duration: CFTimeInterval = 5.0) {
+        let animation = CASpringAnimation(keyPath: "position.\(position.rawValue)")
+        animation.damping = 1
+        animation.fromValue = position == .y ? self.layer.position.y : self.layer.position.x
+        animation.toValue = position == .y ? self.layer.position.y - 100.0 : self.layer.position.x - 100.0
+        animation.duration = duration
+        self.layer.add(animation, forKey: "shake")
+    }
+}
+
+extension UIView {
     public enum AlignView {}
+    public enum Position: String {
+        case x = "x"
+        case y = "y"
+    }
 }
 
 extension UIView.AlignView {
@@ -64,6 +84,7 @@ extension UIView.AlignView {
         case empty
     }
 }
+
 
 public func mainDelay(durcation: TimeInterval, execute: @escaping ()-> Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + durcation) {
