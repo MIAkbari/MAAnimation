@@ -7,7 +7,11 @@ public extension UIView {
             callback()
         }
     }
-
+    
+    /// setupCenterX
+    /// - Parameters:
+    ///   - view: main view for view animation
+    ///   - align: Align for position
     func setupCenterX(animation view: UIView, align: AlignView.X = .empty) {
         let outViewWidth: CGFloat = 200
 
@@ -22,6 +26,10 @@ public extension UIView {
         }
     }
 
+    /// setupCenterY
+    /// - Parameters:
+    ///   - view: main view for view animation
+    ///   - align: Align for position
     func setupCenterY(animation view: UIView, align: AlignView.Y = .empty) {
         let outViewHeight: CGFloat = +UIScreen.main.bounds.height
 
